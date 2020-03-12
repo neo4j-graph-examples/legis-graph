@@ -5,12 +5,12 @@
 :logo: resources/legisgraph-icon-blue.png
 :tags: 
 :author: Will Lyons
-:use-load-script: /scripts/legis-graph.cyp
+:use-load-script: scripts/legis-graph.cyp
 :use-dump-file: false
 :use-plugin: false
 :target-db-version: 3.5.14,4.0.0
 :bloom-perspective: false
-:guide: /documentation/intro.adoc
+:guide: documentation/intro.adoc
 :rendered-guide: https://guides.neo4j.com/sandbox/legis-graph/index.html
 :model:
 :model-guide:
