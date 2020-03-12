@@ -2,7 +2,7 @@
 :long_name: Legis-Graph
 :description: US Congress modeled as a Graph - bills, votes, members, and more.
 :icon: 
-:logo: resources/legisgraph-icon-blue.pgn
+:logo: /resources/legisgraph-icon-blue.pgn
 :tags: 
 :author: Will Lyons
 :use-load-script: scripts/legis-graph.cyp
@@ -10,11 +10,13 @@
 :use-plugin: false
 :target-db-version: 3.5.14,4.0.0
 :bloom-perspective: false
-:guide: documentation/intro.adoc
+:guide: /documentation/intro.adoc
 :rendered-guide: https://guides.neo4j.com/sandbox/legis-graph/index.html
 :model:
 :model-guide:
 //also need to think about all the various neo4j.conf stuff we'd want to set as well, e.g. memory, whitelist procedures, etc.
+
+image::{logo}[]
 
 = {name} Graph Example
 
