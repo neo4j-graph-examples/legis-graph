@@ -18,7 +18,7 @@
 
 image::{logo}[]
 
-= {name} Graph Example
+= {long_name} Graph Example
 
 Description: {description}
 
