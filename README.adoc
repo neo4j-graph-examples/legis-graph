@@ -1,31 +1,66 @@
 :name: legis-graph
-:long_name: Legis-Graph
-:description: US Congress modeled as a Graph - bills, votes, members, and more.
-:icon: 
-:logo: resources/legisgraph-icon-blue.png
-:tags: 
-:author: Will Lyons
-:use-load-script: scripts/legis-graph.cyp
-:use-dump-file: false
-:use-plugin: false
-:target-db-version: 3.5.14,4.0.0
-:bloom-perspective: false
-:guide: documentation/intro.adoc
+:long-name: Legis Graph
+:description: US Congress modeled as a Graph - bills, votes, members, and more
+:icon:
+:logo: documentation/img/legisgraph-icon-blue.png
+:tags: example-data,dataset,legislative-data,legis-graph,
+:author: William Lyon
+:use-load-script: scripts/legis-graph.cypher
+:data: import/*.csv
+:use-dump-file: data/legis-graph-40.dump
+:use-plugin:
+:target-db-version: 3.5,4.0
+:bloom-perspective: bloom/legis-graph.bloom-perspective
+:guide: documentation/legis-graph.neo4j-browser-guide
 :rendered-guide: https://guides.neo4j.com/sandbox/legis-graph/index.html
-:model:
+:model: documentation/img/model.png
+:example: documentation/img/example.png
+
+:query: MATCH (s:State {code: $state})<-[:REPRESENTS]-(l:Legislator) +
+RETURN l.firstName+' '+l.lastName as name +
+
+:param-name: state
+:param-value: NY
+:result-column: name
+:expected-result: Hakeem Jeffries
+
 :model-guide:
-//also need to think about all the various neo4j.conf stuff we'd want to set as well, e.g. memory, whitelist procedures, etc.
+:todo: 
+image::{logo}[width=100]
 
-image::{logo}[]
+== {long-name} Graph Example
 
-= {long_name} Graph Example
+Description: _{description}_
 
-Description: {description}
+.Model
+image::{model}[]
+
+.Example
+image::{example}[width=600]
+
+.Example Query:
+[source,cypher,subs=attributes]
+----
+{query}
+----
 
 === Setup
 
-This is for version: {target-db-version}
+This is for Neo4j version: `{target-db-version}`
 
-unrendered guide: {guide}
+Rendered guide available from: `:play legis-graph` 
+// or `:play {rendered-guide}``
 
-rendered guide available from: {rendered-guide}
+Import Script: `cypher-shell -a <address> -u neo4j -p <password> -f {use-load-script}`
+
+Unrendered guide: link:{guide}[]
+
+Data files: `{data}`
+
+=== Code Examples
+
+* link:code/javascript/example.js[JavaScript]
+* link:code/java/Example.java[Java]
+* link:code/csharp/Example.cs[C#]
+* link:code/python/example.py[Python]
+* link:code/go/example.go[Go]

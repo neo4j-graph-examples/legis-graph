@@ -1,0 +1,16 @@
+{
+    "name": "legis-graph",
+    "description":"US Congress modeled as a Graph - bills, votes, members, and more",
+    "install": [
+      {
+          "dumpFile": "data/legis-graph-35.dump",
+          "targetNeo4jVersion":"3.5",
+          "scriptFile":"scripts/legis-graph.cypher"
+      },
+      {
+          "dumpFile": "data/legis-graph-40.dump",
+          "targetNeo4jVersion": "^4.0",
+          "scriptFile":"scripts/legis-graph.cypher"
+      }
+  ]
+}
