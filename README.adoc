@@ -3,7 +3,7 @@
 :description: US Congress modeled as a Graph - bills, votes, members, and more
 :icon:
 :logo: documentation/img/legisgraph-icon-blue.png
-:tags: example-data,dataset,legislative-data,legis-graph,
+:tags: example-data,dataset,legislative-data,legis-graph,politics
 :author: William Lyon
 :use-load-script: scripts/legis-graph.cypher
 :data: import/*.csv
