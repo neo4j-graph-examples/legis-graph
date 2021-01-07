@@ -18,7 +18,7 @@ namespace dotnet {
 
     var cypherQuery =
       @"
-      MATCH (s:State {code: $state})<-[:REPRESENTS]-(l:Legislator)
+      MATCH (s:State {code: $state})<-[:REPRESENTS]-(l:Legislator) 
       RETURN l.firstName+' '+l.lastName as name
       ";
 

@@ -30,7 +30,7 @@ func runQuery(uri, database, username, password string) (result []string, err er
 	results, err := session.ReadTransaction(func(transaction neo4j.Transaction) (interface{}, error) {
 		result, err := transaction.Run(
 			`
-			MATCH (s:State {code: $state})<-[:REPRESENTS]-(l:Legislator)
+			MATCH (s:State {code: $state})<-[:REPRESENTS]-(l:Legislator) 
 			RETURN l.firstName+' '+l.lastName as name
 			`, map[string]interface{}{
 				"state": "NY",
