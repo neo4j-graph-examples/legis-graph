@@ -7,7 +7,7 @@ const driver = neo4j.driver('bolt://<HOST>:<BOLTPORT>',
 
 const query =
   `
-  MATCH (s:State {code: $state})<-[:REPRESENTS]-(l:Legislator)
+  MATCH (s:State {code: $state})<-[:REPRESENTS]-(l:Legislator) 
   RETURN l.firstName+' '+l.lastName as name
   `;
 
