@@ -12,7 +12,7 @@ Throughout these interactive Neo4j Browser guides, when you see a Cypher embedde
 .What is the meta model for this data set?
 [source,cypher]
 ----
-CALL db.schema();
+call db.schema.visualization();
 ----
 
 == Querying The Graph
