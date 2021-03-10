@@ -17,14 +17,6 @@
 :model: documentation/img/model.png
 :example: documentation/img/example.png
 
-:query: MATCH (s:State {code: $state})<-[:REPRESENTS]-(l:Legislator) +
-RETURN l.firstName+' '+l.lastName as name +
-
-:param-name: state
-:param-value: NY
-:result-column: name
-:expected-result: Hakeem Jeffries
-
 :todo: false
 image::{icon}[width=100]
 
@@ -43,9 +35,10 @@ image::{model}[]
 image::{example}[width=600]
 
 .Example Query:
-[source,cypher,subs=attributes]
+[source,cypher,role=query-example,param-name=state,param-value=NY,result-column=name,expected-result="Hakeem Jeffries"]
 ----
-{query}
+MATCH (s:State {code: $state})<-[:REPRESENTS]-(l:Legislator)
+RETURN l.firstName+' '+l.lastName as name
 ----
 
 === Setup
