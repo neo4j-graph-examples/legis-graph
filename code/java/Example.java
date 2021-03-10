@@ -17,7 +17,7 @@ public class Example {
     try (Session session = driver.session(SessionConfig.forDatabase("neo4j"))) {
 
       String cypherQuery =
-        "MATCH (s:State {code: $state})<-[:REPRESENTS]-(l:Legislator) " +
+        "MATCH (s:State {code: $state})<-[:REPRESENTS]-(l:Legislator)" +
         "RETURN l.firstName+' '+l.lastName as name";
 
       var result = session.readTransaction(
